@@ -8,6 +8,7 @@ import {
 import Home from "./pages/Home";
 import PhoneNumberInput from "./pages/PhoneNumberInput";
 import UseDebounce from "./pages/UseDebounce";
+import UseHover from "./pages/UseHover";
 
 export default function App() {
   return (
@@ -23,6 +24,9 @@ export default function App() {
           <li>
             <Link to="/use-debounce">Use Debounce</Link>
           </li>
+          <li>
+            <Link to="/use-hover">Use Hover</Link>
+          </li>
         </ul>
 
         <hr />
@@ -31,6 +35,7 @@ export default function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/phone-number-input" element={<PhoneNumberInput />} />
           <Route path="/use-debounce" element={<UseDebounce />} />
+          <Route path="/use-hover" element={<UseHover />} />
         </Routes>
       </div>
     </Router>

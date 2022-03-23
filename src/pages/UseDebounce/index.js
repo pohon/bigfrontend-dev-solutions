@@ -21,7 +21,8 @@ const useDebounce = (value, timeout) => {
 
     prevTime.current = new Date();
 
-  }, [value, timeout]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   return debouncedValue;
 };
