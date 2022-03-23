@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const useDebounce = (value, timeout) => {
-
   // states
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -9,6 +8,7 @@ const useDebounce = (value, timeout) => {
   const prevTime = useRef(null);
   const prevTimeout = useRef(null);
 
+  // effects
   useEffect(() => {
     // if time difference between now and prevTime < timeout --> cancel prevTimeout
     if ((new Date() - prevTime.current) < timeout){
@@ -28,10 +28,11 @@ const useDebounce = (value, timeout) => {
 
 export default function UseDebounce() {
 
+  // states
   const [value, setValue] = useState('');
   const debouncedValue = useDebounce(value, 1000);
-  console.log('debouncedValue', debouncedValue)
 
+  // handlers
   const handleChange = evt => {
     setValue(evt.target.value);
   };
